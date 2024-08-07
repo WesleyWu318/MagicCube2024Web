@@ -104,7 +104,8 @@ namespace MagicCubeRegistrationSystem
                 SqlConnection connection = new SqlConnection();
                 SqlCommand command = new SqlCommand();
 
-                connection.ConnectionString = "Data Source=WESLEYPC;Initial Catalog=MagicCube;Integrated Security=SSPI;";
+                connection = new SqlConnection(cs);
+                //connection.ConnectionString = "Data Source=WESLEYPC;Initial Catalog=MagicCube;Integrated Security=SSPI;";
                 command.Connection = connection;
 
                 if (connection.State != System.Data.ConnectionState.Open) connection.Open();
