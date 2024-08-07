@@ -1,0 +1,21 @@
+C:\Users\jeffr\source\repos\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\jeffr\source\repos\WebApplication2\bin\WebApplication2.dll
+C:\Users\jeffr\source\repos\WebApplication2\bin\WebApplication2.pdb
+C:\Users\jeffr\source\repos\WebApplication2\bin\WebApplication2.xml
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.vbproj.AssemblyReference.cache
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.Resources.resources
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.vbproj.GenerateResource.cache
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.vbproj.CoreCompileInputs.cache
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.xml
+C:\Users\jeffr\source\repos\WebApplication2\obj\Debug\WebApplication2.pdb
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\bin\WebApplication2.dll.config
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\bin\WebApplication2.dll
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\bin\WebApplication2.pdb
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\bin\WebApplication2.xml
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.Resources.resources
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.vbproj.GenerateResource.cache
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.vbproj.CoreCompileInputs.cache
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.dll
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.xml
+D:\JA\@Jeffrey\@Project\@MagicCube\Postsales\Software Development\WebApplication2\obj\Debug\WebApplication2.pdb
