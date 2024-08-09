@@ -19,6 +19,11 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 校名:&nbsp;
                 <asp:Label ID="lblSchoolName" runat="server" Text="Label"></asp:Label>
             </h2>
+           <h2>密碼:&nbsp;
+                <asp:TextBox ID="txtPassword" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
+                <asp:Button ID="btnPassEdit" runat="server" Text="修改密碼" OnClick="btnPassEdit_Click" />
+               <asp:Button ID="btnPassUpdate" runat="server" Text="更新" Visible="False" OnClick="btnPassUpdate_Click" /><asp:Button ID="btnPassCancel" runat="server" Text="取消" Visible="False" OnClick="btnPassCancel_Click" />
+               <h3><asp:Label ID="PasswordMessage" runat="server" Width="250px"></asp:Label></h3>
             <h2>聯絡人:
             </h2>
          <%--   <hr></hr>--%>
@@ -28,19 +33,18 @@
             <h3>職稱&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtTeacherTitle" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
                  &nbsp;&nbsp;&nbsp;
             </h3>
-            <h3>電話&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtTeacherPhone" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
+            <h3>電話&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtTeacherPhone" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
             </h3>
-            <h3>email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtTeacherEmail" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
+            <h3>email&nbsp;&nbsp;<asp:TextBox ID="txtTeacherEmail" runat="server" Font-Size="Large" Height="27px" Width="195px"></asp:TextBox>
             </h3>
-            <p><asp:Button ID="OK" runat="server" Text="確認" Width="404px" OnClick="OK_Click" />
-            </p>
-        
+            <asp:Button ID="OK" runat="server" Text="確認" Width="404px" OnClick="OK_Click" />
+            
         </div>
 
         <div style="height: 413px">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"
 
-OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" DataKeyNames="SchoolCode,ID">
+OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" DataKeyNames="SchoolCode,ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                  <asp:TemplateField>
                     <ItemTemplate>

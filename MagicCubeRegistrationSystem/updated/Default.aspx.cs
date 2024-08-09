@@ -175,6 +175,7 @@ namespace _2024MagicCube
                 AddID(connection, SchoolCode, kind);
                 Session["SchoolID"] = SchoolCode;
                 Session["Kind"] = kind;
+                Session["Password"] = password;
                 Response.Redirect("WebForm2.aspx");
             }
         }

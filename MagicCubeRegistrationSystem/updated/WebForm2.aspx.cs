@@ -16,8 +16,16 @@ namespace _2024MagicCube
         SqlConnection con;
         SqlDataAdapter adapt;
         DataTable dt;
+
+        string passcode;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (IsPostBack)
+            //{
+            //    txtPassword.Text = Session["password"].ToString();
+            //}
+
+            passcode = Session["password"].ToString();
             if (!IsPostBack)
             {
                 //string[] keys = Request.Form.AllKeys;
@@ -25,7 +33,12 @@ namespace _2024MagicCube
 
                 string SchoolID = Session["SchoolID"].ToString();
                 string kind = Session["kind"].ToString();
+                passcode = Session["password"].ToString();
                 lblSchoolCode2.Text = SchoolID;
+                txtPassword.Text = setPassword();
+                Session["password"] = passcode;
+                txtPassword.Enabled = false;
+                //txtPassword.TextMode = TextBoxMode.Password;
 
                 ShowData();
                 SqlConnection connection = new SqlConnection();
@@ -88,6 +101,7 @@ namespace _2024MagicCube
             TextBox TeacherTitle = form1.FindControl("txtTeacherTitle") as TextBox;
             TextBox TeacherPhone = form1.FindControl("txtTeacherPhone") as TextBox;
             TextBox TeacherEmail = form1.FindControl("txtTeacherEmail") as TextBox;
+
             //updating the record
             string sqlcmd = "Update RegistrationAccount set TeacherName='@TeacherName', TeacherTitle='@TeacherTitle', TeacherPhone='@TeacherPhone', TeacherEmail='@TeacherEmail' where SchoolCode='@SchoolCode'";
             sqlcmd = sqlcmd.Replace("@TeacherName", TeacherName.Text);
@@ -159,18 +173,19 @@ namespace _2024MagicCube
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
             //Finding the controls from Gridview for the row which is going to update
-            Label schoolCode = GridView1.Rows[e.RowIndex].FindControl("lbl_SchoolCode") as Label;
+            //Label schoolCode = GridView1.Rows[e.RowIndex].FindControl("lbl_SchoolCode") as Label;
             Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label;
             TextBox studentName = GridView1.Rows[e.RowIndex].FindControl("txt_StudentName") as TextBox;
             TextBox teacherName = GridView1.Rows[e.RowIndex].FindControl("txt_TeacherName") as TextBox;
             con = new SqlConnection(cs);
             con.Open();
             //updating the record
-            string sqlcmd = "Update Student2024 set studentName='@studentName', TeacherName='@teacherName' where ID='@id' and SchoolCode='@schoolCode'";
+            string sqlcmd = "Update Student2024 set studentName='@studentName', TeacherName='@teacherName' where ID='@id' and SchoolCode='@schoolCode' and Kind='@kind'";
             sqlcmd = sqlcmd.Replace("@studentName", studentName.Text);
             sqlcmd = sqlcmd.Replace("@teacherName", teacherName.Text);
             sqlcmd = sqlcmd.Replace("@id", id.Text);
-            sqlcmd = sqlcmd.Replace("@schoolCode", schoolCode.Text);
+            sqlcmd = sqlcmd.Replace("@schoolCode", Session["SchoolID"].ToString());
+            sqlcmd = sqlcmd.Replace("@kind", Session["kind"].ToString());
             SqlCommand cmd = new SqlCommand(sqlcmd, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -185,6 +200,86 @@ namespace _2024MagicCube
             GridView1.EditIndex = -1;
             ShowData();
         }
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        //protected void btnChangePassword_Click(object sender, EventArgs e)
+        //{
+        //    txtPassword.Enabled = true;
+        //    txtPassword.Text = passcode;
+        //    //txtPassword.TextMode = TextBoxMode.SingleLine;
+        //}
+
+        protected void btnPassEdit_Click(object sender, EventArgs e)
+        {
+            btnPassEdit.Visible = false;
+            btnPassUpdate.Visible = true;
+            btnPassCancel.Visible = true;
+            txtPassword.Text = passcode;
+            txtPassword.Enabled = true;
+            PasswordMessage.Text = "";
+            //txtPassword.TextMode = TextBoxMode.Password;
+            
+        }
+
+        protected void btnPassUpdate_Click(object sender, EventArgs e)
+        {
+            btnPassEdit.Visible = true;
+            btnPassUpdate.Visible = false;
+            btnPassCancel.Visible = false;
+            txtPassword.Enabled = false;
+
+            string SchoolCode = Session["SchoolID"].ToString();
+
+            passcode = txtPassword.Text;
+            string SchoolID = Session["SchoolID"].ToString();
+            string kind = Session["kind"].ToString();
+            Session["password"] = passcode;
+
+            //check password
+            if (passcode == SchoolCode)
+            {
+                PasswordMessage.Text = "密碼不能與預設密碼相同";
+            }
+            else
+            {
+                PasswordMessage.Text = "密碼修改成功";
+                con = new SqlConnection(cs);
+                con.Open();
+
+                string sqlcmd = "Update RegistrationAccount set Password='@password' where SchoolCode='@schoolCode' and Kind = '@Kind'";
+                sqlcmd = sqlcmd.Replace("@password", passcode);
+                sqlcmd = sqlcmd.Replace("@schoolCode", SchoolID);
+                sqlcmd = sqlcmd.Replace("@Kind", kind);
+
+                SqlCommand cmd = new SqlCommand(sqlcmd, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                txtPassword.Text = setPassword();
+            }
+
+        }
+
+        protected void btnPassCancel_Click(object sender, EventArgs e)
+        {
+            btnPassEdit.Visible = true;
+            btnPassUpdate.Visible = false;
+            btnPassCancel.Visible = false;
+            txtPassword.Text = setPassword();
+            txtPassword.Enabled = false;
+            //txtPassword.TextMode = TextBoxMode.Password;
+        }
+
+        protected string setPassword()
+        {
+            string temp = "";
+            for(int i = 0; i < passcode.Length; ++i)
+            {
+                temp += "*";
+            }
+            return temp;
+        }
     }
 }
