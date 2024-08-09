@@ -11,7 +11,7 @@ namespace _2024MagicCube
 {
 
 
-    public partial class WebForm2
+    public partial class WebForm1
     {
 
         /// <summary>
@@ -24,49 +24,40 @@ namespace _2024MagicCube
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblSchoolCode2 控制項。
+        /// txtSchoolName 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSchoolCode2;
+        protected global::System.Web.UI.WebControls.TextBox txtSchoolName;
 
         /// <summary>
-        /// lblSchoolName 控制項。
+        /// btnKind 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSchoolName;
+        protected global::System.Web.UI.WebControls.Button btnKind;
 
         /// <summary>
-        /// txtTeacherName 控制項。
+        /// ddlKind 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTeacherName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlKind;
 
         /// <summary>
-        /// txtTeacherPhone 控制項。
+        /// txtPassword 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTeacherPhone;
-
-        /// <summary>
-        /// txtTeacherEmail 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTeacherEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
         /// OK 控制項。
@@ -78,21 +69,12 @@ namespace _2024MagicCube
         protected global::System.Web.UI.WebControls.Button OK;
 
         /// <summary>
-        /// GridView1 控制項。
+        /// LoginMessage 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// SqlDataSource2 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Label LoginMessage;
     }
 }

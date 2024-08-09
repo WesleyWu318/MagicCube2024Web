@@ -11,6 +11,10 @@
     <form id="form1" runat="server">
         <div class="jumbotron">
             <h2  for="txtSchoolName">學校代碼 <asp:TextBox ID="txtSchoolName" runat="server" Font-Size="Small" Height="27px" Width="195px"></asp:TextBox>
+                <asp:Button ID="btnKind" runat="server" Text="查詢" OnClick="btnKind_Click" />
+                &nbsp;&nbsp;校別
+                <asp:DropDownList ID="ddlKind" runat="server" AutoPostBack="True" >
+                </asp:DropDownList>
             </h2>
             <h2>密碼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtPassword" runat="server" Font-Size="Small" Height="27px" Width="195px"></asp:TextBox>
             </h2>

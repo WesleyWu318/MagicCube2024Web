@@ -24,6 +24,7 @@ namespace _2024MagicCube
                 //ShowAllPostBackData(keys);
 
                 string SchoolID = Session["SchoolID"].ToString();
+                string kind = Session["kind"].ToString();
                 lblSchoolCode2.Text = SchoolID;
 
                 ShowData();
@@ -42,10 +43,12 @@ namespace _2024MagicCube
                 //else
                 //    Response.Write("<script>alert('數據庫連接失敗! ');</script>");
 
-                string commandString = "SELECT * FROM RegistrationAccount where SchoolCode='@SchoolCode'";
+                //string commandString = "SELECT * FROM RegistrationAccount where SchoolCode='@SchoolCode'";
+                string commandString = "SELECT * FROM RegistrationAccount where SchoolCode='@SchoolCode' and Kind='@Kind'";
                 string id;
                 id = lblSchoolCode2.Text.Trim();
                 commandString = commandString.Replace("@SchoolCode", id);
+                commandString = commandString.Replace("@Kind", kind);
 
                 System.Data.DataTable objDataTable = GetDataTable(connection, commandString);
 
@@ -131,8 +134,9 @@ namespace _2024MagicCube
             dt = new DataTable();
             con = new SqlConnection(cs);
             con.Open();
-            string cmdadapt = "Select SchoolCode,ID,StudentName,TeacherName from Student2024 where SchoolCode='@SchoolCode'";
+            string cmdadapt = "Select SchoolCode,ID,StudentName,TeacherName from Student2024 where SchoolCode='@SchoolCode' and Kind='@Kind'";
             cmdadapt = cmdadapt.Replace("@SchoolCode", Session["SchoolID"].ToString());
+            cmdadapt = cmdadapt.Replace("@Kind", Session["Kind"].ToString());
             adapt = new SqlDataAdapter(cmdadapt, con);
             adapt.Fill(dt);
             if (dt.Rows.Count > 0)
