@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="MagicCubeRegistrationSystem.WebForm2" %>
 
 <!DOCTYPE html>
+<%-- Hello this is Ivy--%>
 
 <%-- Ivy say hi change file--%>
 
