@@ -58,6 +58,7 @@ namespace _2024MagicCube
 
                     lblSchoolName.Text = objDataRow["SchoolName"].ToString();
                     txtTeacherName.Text = objDataRow["TeacherName"].ToString();
+                    txtTeacherTitle.Text = objDataRow["TeacherTitle"].ToString();
                     txtTeacherPhone.Text = objDataRow["TeacherPhone"].ToString();
                     txtTeacherEmail.Text = objDataRow["TeacherEmail"].ToString();
                 }
@@ -84,11 +85,13 @@ namespace _2024MagicCube
 
             Label SchoolCode = form1.FindControl("lblSchoolCode2") as Label;
             TextBox TeacherName = form1.FindControl("txtTeacherName") as TextBox;
+            TextBox TeacherTitle = form1.FindControl("txtTeacherTitle") as TextBox;
             TextBox TeacherPhone = form1.FindControl("txtTeacherPhone") as TextBox;
             TextBox TeacherEmail = form1.FindControl("txtTeacherEmail") as TextBox;
             //updating the record
-            string sqlcmd = "Update RegistrationAccount set TeacherName='@TeacherName', TeacherPhone='@TeacherPhone', TeacherEmail='@TeacherEmail' where SchoolCode='@SchoolCode'";
+            string sqlcmd = "Update RegistrationAccount set TeacherName='@TeacherName', TeacherTitle='@TeacherTitle', TeacherPhone='@TeacherPhone', TeacherEmail='@TeacherEmail' where SchoolCode='@SchoolCode'";
             sqlcmd = sqlcmd.Replace("@TeacherName", TeacherName.Text);
+            sqlcmd = sqlcmd.Replace("@TeacherTitle", TeacherTitle.Text);
             sqlcmd = sqlcmd.Replace("@TeacherPhone", TeacherPhone.Text);
             sqlcmd = sqlcmd.Replace("@TeacherEmail", TeacherEmail.Text);
             sqlcmd = sqlcmd.Replace("@SchoolCode", SchoolCode.Text);
