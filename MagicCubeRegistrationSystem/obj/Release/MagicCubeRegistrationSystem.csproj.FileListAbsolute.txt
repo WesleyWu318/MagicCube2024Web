@@ -74,3 +74,7 @@ D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Release\Magic
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Release\MagicCubeRegistrationSystem.csproj.CopyComplete
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Release\MagicCubeRegistrationSystem.dll
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Release\MagicCubeRegistrationSystem.pdb
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.dll
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.Framework.dll
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.xml
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.Framework.xml

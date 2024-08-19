@@ -46,8 +46,10 @@ namespace MagicCubeRegistrationSystem
                 password = txtPassword.Text.Trim();
 
                 checkSchool(connection, id, kind, password);
-            }   
-            
+            }
+
+            ddlKind.Items.Clear();
+
         }
         public void AddID(SqlConnection connection, string SchoolCode, string kind)
         {
@@ -173,6 +175,7 @@ namespace MagicCubeRegistrationSystem
 
         protected void btnKind_Click(object sender, EventArgs e)
         {
+            
             LoginMessage.Text = "";
             ddlKind.Items.Clear();
 

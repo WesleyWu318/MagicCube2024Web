@@ -4,6 +4,13 @@ using System.Data;
 using System.Configuration;
 using System.Web;
 using System.Runtime.Remoting.Contexts;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 public class ProjectClass
 {
@@ -13,13 +20,11 @@ public class ProjectClass
 
     public ProjectClass()
     {
-        HttpContext.Current.Application["ThisProject"]= this;
+        HttpContext.Current.Application["ThisProject"] = this;
     }
 
     public void HistoryMessages(string action, string msg, string ip, string sc, string kind)
     {
-        
-
         SqlConnection connection = new SqlConnection();
 
         connection.ConnectionString = ConfigurationManager.ConnectionStrings["MagicCubeConnectionString"].ConnectionString;
@@ -52,7 +57,7 @@ public class ProjectClass
         commandString = commandString.Replace("@IP", ip);
         commandString = commandString.Replace("@schoolCode", sc);
         commandString = commandString.Replace("@kind", kind);
-                
+
 
         SqlCommand historyCommand = new SqlCommand(commandString, connection);
 
@@ -76,5 +81,5 @@ public class ProjectClass
         return ipAddress;
 
     }
-
+    
 }

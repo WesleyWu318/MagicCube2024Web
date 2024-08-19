@@ -150,3 +150,7 @@ D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Debug\MagicCu
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Debug\MagicCubeRegistrationSystem.csproj.CopyComplete
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Debug\MagicCubeRegistrationSystem.dll
 D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\obj\Debug\MagicCubeRegistrationSystem.pdb
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.dll
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.Framework.dll
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.xml
+D:\Wesley\Project\MagicCube2024Web\MagicCubeRegistrationSystem\bin\DocumentFormat.OpenXml.Framework.xml

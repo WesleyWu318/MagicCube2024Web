@@ -161,7 +161,8 @@
                 <h3>email&nbsp; <asp:TextBox ID="txtTeacherEmail" runat="server" Font-Size="Large" Height="27px" Width="195px" placeholder="email"></asp:TextBox></h3>
                 
              </div>
-               <asp:Button ID="OK" runat="server" Text="確認" Width="404px" OnClick="OK_Click" class="btn btn-success"/>
+               <asp:Button ID="OK" runat="server" Text="儲存修改" Width="404px" OnClick="OK_Click" class="btn btn-success"/>
+               　<asp:Button ID="btnWord" runat="server" Text="匯出Word檔"  class="btn btn-primary" OnClick="btnWord_Click"/>
                <br />
                <asp:Label ID="lblErrorMessage" runat="server" Text="" CssClass="red"></asp:Label>
                <div style="height: 350px" class="gridAlign">

@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using Examples;
+using System.IO;
 
 namespace MagicCubeRegistrationSystem
 {
@@ -20,6 +22,7 @@ namespace MagicCubeRegistrationSystem
         DataTable dt;
         string passcode;
 
+        
         protected void ShowData()
         {
             dt = new DataTable();
@@ -66,7 +69,8 @@ namespace MagicCubeRegistrationSystem
             sqlcmd = sqlcmd.Replace("@teacherName", teacherName.Text);
             sqlcmd = sqlcmd.Replace("@id", id.Text);
             sqlcmd = sqlcmd.Replace("@schoolCode", schoolCode);
-            sqlcmd = sqlcmd.Replace("@kind", kind);
+            sqlcmd = sqlcmd.Replace("@kind", kind);            
+
             SqlCommand cmd = new SqlCommand(sqlcmd, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -153,6 +157,8 @@ namespace MagicCubeRegistrationSystem
         {
             string schoolCode = Session["SchoolID"].ToString();
             string kind = Session["kind"].ToString();
+
+
 
             ProjectClass thisProject = new ProjectClass();
             thisProject.HistoryMessages("modify", "teacher infomation", thisProject.getIP(), schoolCode, kind);
@@ -342,6 +348,71 @@ namespace MagicCubeRegistrationSystem
         {
             
             Response.Redirect("Info.aspx");
+        }
+
+
+
+        private void Example01_WordTmplRendering()
+        {
+            string ResultFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads";
+
+            string schoolCode = Session["SchoolID"].ToString();
+            string kind = Session["kind"].ToString();
+
+            string[,] tableInfo = new string[6,2];
+
+            con = new SqlConnection(cs);
+            con.Open();
+            
+            for(int i=1; i<=6; i++)
+            {
+                string sqlcmd = "SELECT * FROM Student2024 where SchoolCode='@SchoolCode' and Kind='@Kind' and ID='@ID'";
+
+                sqlcmd = sqlcmd.Replace("@SchoolCode", schoolCode);
+                sqlcmd = sqlcmd.Replace("@Kind", kind);
+                sqlcmd = sqlcmd.Replace("@ID", i.ToString());
+
+                System.Data.DataTable objDataTable = GetDataTable(con, sqlcmd);
+                System.Data.DataRow objDataRow = objDataTable.Rows[0];
+
+                tableInfo[i-1, 0] = objDataRow["StudentName"].ToString();
+                tableInfo[i - 1, 1] = objDataRow["TeacherName"].ToString();
+            }
+                        
+            con.Close();
+
+            var docxBytes = WordRender.GenerateDocx(File.ReadAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "WordFormat/wordFormat.docx")),
+                new Dictionary<string, string>()
+                {
+                    ["SchoolName"] = lblSchoolName.Text.Trim(),
+                    ["StudentName1"] = tableInfo[0, 0],
+                    ["StudentName2"] = tableInfo[1, 0],
+                    ["StudentName3"] = tableInfo[2, 0],
+                    ["StudentName4"] = tableInfo[3, 0],
+                    ["StudentName5"] = tableInfo[4, 0],
+                    ["StudentName6"] = tableInfo[5, 0],
+                    ["TeacherName1"] = tableInfo[0, 1],
+                    ["TeacherName2"] = tableInfo[1, 1],
+                    ["TeacherName3"] = tableInfo[2, 1],
+                    ["TeacherName4"] = tableInfo[3, 1],
+                    ["TeacherName5"] = tableInfo[4, 1],
+                    ["TeacherName6"] = tableInfo[5, 1],
+                    ["InfoName"] = txtTeacherName.Text.Trim(),
+                    ["InfoTitle"] = txtTeacherTitle.Text.Trim(),
+                    ["InfoPhone"] = txtTeacherPhone.Text.Trim(),
+                    ["InfoEmail"] = txtTeacherEmail.Text.Trim(),                    
+                });
+
+            Response.Clear();
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            Response.AddHeader("Content-Disposition", $"attachment; filename=套表測試-{DateTime.Now:HHmmss}.docx");
+            Response.BinaryWrite(docxBytes);
+            Response.End();
+        }
+
+        protected void btnWord_Click(object sender, EventArgs e)
+        {
+            Example01_WordTmplRendering();
         }
     }
 }

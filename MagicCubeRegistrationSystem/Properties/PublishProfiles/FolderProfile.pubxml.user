@@ -5,9 +5,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Wesley\Project\MagicCubeRegistrationSystemPublish</_PublishTargetUrl>
-    <History>True|2024-08-12T09:32:23.0956538Z;True|2024-08-12T14:46:19.2816820+08:00;True|2024-08-09T21:28:21.8610776+08:00;True|2024-08-09T21:08:17.8809172+08:00;True|2024-08-09T20:51:56.4105110+08:00;</History>
+    <History>True|2024-08-19T06:23:55.3870278Z;False|2024-08-19T14:21:45.6266718+08:00;False|2024-08-19T14:17:30.8194267+08:00;False|2024-08-19T14:15:43.7893990+08:00;False|2024-08-19T14:14:21.3043563+08:00;False|2024-08-19T14:13:21.4938081+08:00;True|2024-08-12T17:32:23.0956538+08:00;True|2024-08-12T14:46:19.2816820+08:00;True|2024-08-09T21:28:21.8610776+08:00;True|2024-08-09T21:08:17.8809172+08:00;True|2024-08-09T20:51:56.4105110+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="AnnounceTemplate.docx">
+      <publishTime>08/19/2024 14:22:28</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>08/09/2024 10:18:28</publishTime>
     </File>
@@ -20,11 +23,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/AspNet.ScriptManager.jQuery.dll">
       <publishTime>08/09/2024 10:18:28</publishTime>
     </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>07/31/2024 04:26:40</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.Framework.dll">
+      <publishTime>07/31/2024 04:26:40</publishTime>
+    </File>
     <File Include="bin/MagicCubeRegistrationSystem.dll">
-      <publishTime>08/12/2024 17:32:22</publishTime>
+      <publishTime>08/19/2024 14:15:43</publishTime>
     </File>
     <File Include="bin/MagicCubeRegistrationSystem.pdb">
-      <publishTime>08/12/2024 17:32:22</publishTime>
+      <publishTime>08/19/2024 14:15:43</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>08/09/2024 10:18:28</publishTime>
@@ -201,10 +210,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/09/2024 10:18:29</publishTime>
     </File>
     <File Include="bin/zh-Hant/Microsoft.AspNet.FriendlyUrls.resources.dll">
-      <publishTime>08/09/2024 10:18:28</publishTime>
+      <publishTime>07/31/2013 01:01:44</publishTime>
     </File>
     <File Include="bin/zh-Hant/System.Web.Optimization.resources.dll">
-      <publishTime>08/09/2024 10:18:28</publishTime>
+      <publishTime>02/11/2014 23:28:40</publishTime>
     </File>
     <File Include="Bundle.config">
       <publishTime>08/09/2024 10:18:27</publishTime>
@@ -237,10 +246,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/09/2024 10:18:27</publishTime>
     </File>
     <File Include="Data.aspx">
-      <publishTime>08/12/2024 17:31:28</publishTime>
+      <publishTime>08/18/2024 15:18:09</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>08/12/2024 16:46:05</publishTime>
+      <publishTime>08/18/2024 17:00:14</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>08/09/2024 10:18:27</publishTime>
@@ -264,7 +273,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/09/2024 14:18:42</publishTime>
     </File>
     <File Include="Info.aspx">
-      <publishTime>08/12/2024 17:14:34</publishTime>
+      <publishTime>08/12/2024 17:44:07</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>08/09/2024 10:18:27</publishTime>
@@ -363,7 +372,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/09/2024 10:18:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/12/2024 14:46:18</publishTime>
+      <publishTime>08/19/2024 14:15:43</publishTime>
     </File>
   </ItemGroup>
 </Project>
