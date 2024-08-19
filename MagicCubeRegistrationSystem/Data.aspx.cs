@@ -402,10 +402,12 @@ namespace MagicCubeRegistrationSystem
                     ["InfoPhone"] = txtTeacherPhone.Text.Trim(),
                     ["InfoEmail"] = txtTeacherEmail.Text.Trim(),                    
                 });
+            DateTime currentTime = DateTime.Now;
+            string formattedDate = currentTime.ToString("yyyy/MM/dd");
 
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-            Response.AddHeader("Content-Disposition", $"attachment; filename=套表測試-{DateTime.Now:HHmmss}.docx");
+            Response.AddHeader("Content-Disposition", $"attachment; filename={lblSchoolName.Text.Trim()}魔術方塊競賽報名表-{formattedDate}.docx");
             Response.BinaryWrite(docxBytes);
             Response.End();
         }
