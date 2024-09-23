@@ -1,2 +1,1 @@
-git test by wesley~~~
-		
+Git Clone testing
