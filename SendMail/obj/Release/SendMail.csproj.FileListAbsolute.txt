@@ -1,0 +1,9 @@
+D:\Wesley\Project\MagicCube2024Web\SendMail\bin\Release\SendMail.exe.config
+D:\Wesley\Project\MagicCube2024Web\SendMail\bin\Release\SendMail.exe
+D:\Wesley\Project\MagicCube2024Web\SendMail\bin\Release\SendMail.pdb
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.Form1.resources
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.Properties.Resources.resources
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.csproj.GenerateResource.cache
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.csproj.CoreCompileInputs.cache
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.exe
+D:\Wesley\Project\MagicCube2024Web\SendMail\obj\Release\SendMail.pdb
